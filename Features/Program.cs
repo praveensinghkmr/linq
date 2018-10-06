@@ -21,9 +21,10 @@ namespace Features
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            foreach (var person in developers)
+            IEnumerator<Employee> enumerator = developers.GetEnumerator();
+            while(enumerator.MoveNext())
             {
-                Console.WriteLine(person.Name);
+                Console.WriteLine(enumerator.Current.Name);
             }
         }
     }
