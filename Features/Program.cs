@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,11 +20,11 @@ namespace Features
             {
                 new Employee { Id = 3, Name = "Alex" }
             };
-
+            Console.WriteLine(developers.Count());     //using linq is commented. this method is rewritten using extension.
             IEnumerator<Employee> enumerator = developers.GetEnumerator();
             while(enumerator.MoveNext())
             {
-                Console.WriteLine(enumerator.Current.Name);
+                Console.WriteLine(enumerator.Current.Name); 
             }
         }
     }
