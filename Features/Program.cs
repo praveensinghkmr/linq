@@ -10,6 +10,16 @@ namespace Features
     {
         static void Main(string[] args)
         {
+            Func<int, int> square = x => x * x;
+            Func<int, int, int> add = (x, y) => x + y;
+            //Writing the body in lambda exp
+            Func<int, int, int> sub = (x, y) =>
+            {
+                int temp = x - y;
+                return temp;
+            };
+            Console.WriteLine(square(add(5,6)));
+            Console.WriteLine(square(sub(8,4)));
             IEnumerable<Employee> developers = new Employee[]
             {
                 new Employee { Id = 1, Name= "Scott" },
@@ -22,8 +32,7 @@ namespace Features
             };
 
             foreach (var employee in developers.Where(
-                employee => employee.Name.StartsWith("S")
-                ))
+                             e => e.Name.StartsWith("S")))
             {
                 Console.WriteLine(employee.Name);
             }
