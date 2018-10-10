@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Linq;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Features.Linq;
+//using Features.Linq;
 namespace Features
 {
     class Program
@@ -20,12 +20,22 @@ namespace Features
             {
                 new Employee { Id = 3, Name = "Alex" }
             };
-            Console.WriteLine(developers.Count());     //using linq is commented. this method is rewritten using extension.
-            IEnumerator<Employee> enumerator = developers.GetEnumerator();
-            while(enumerator.MoveNext())
+
+            foreach (var employee in developers.Where(NameStartsWithS))
             {
-                Console.WriteLine(enumerator.Current.Name); 
+                Console.WriteLine(employee.Name);
             }
+            //Console.WriteLine(developers.Count());     //using linq is commented. this method is rewritten using extension.
+            //IEnumerator<Employee> enumerator = developers.GetEnumerator();
+            //while(enumerator.MoveNext())
+            //{
+            //    Console.WriteLine(enumerator.Current.Name); 
+            //}
+        }
+
+        private static bool NameStartsWithS(Employee employee)
+        {
+            return employee.Name.StartsWith("S");
         }
     }
 }
