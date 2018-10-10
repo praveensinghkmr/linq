@@ -18,8 +18,11 @@ namespace Features
                 int temp = x - y;
                 return temp;
             };
-            Console.WriteLine(square(add(5,6)));
-            Console.WriteLine(square(sub(8,4)));
+
+            Action<int> write = x => Console.WriteLine(x);
+            write(square(add(5,6)));
+            write(square(sub(8,4)));
+
             IEnumerable<Employee> developers = new Employee[]
             {
                 new Employee { Id = 1, Name= "Scott" },
