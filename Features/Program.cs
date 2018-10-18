@@ -31,14 +31,15 @@ namespace Features
 
             IEnumerable<Employee> sales = new List<Employee>()
             {
-                new Employee { Id = 3, Name = "Alex" }
+                new Employee { Id = 3, Name = "Alex" } 
             };
 
-            foreach (var employee in developers.Where(e => e.Name.Length == 5)
-                                               .OrderBy(e => e.Name))
+            var query = developers.Where(e => e.Name.Length == 5).OrderBy(e => e.Name);
+
+            foreach (var employee in query)
             {
                 Console.WriteLine(employee.Name);
-            }
+            } 
             //Console.WriteLine(developers.Count());     //using linq is commented. this method is rewritten using extension.
             //IEnumerator<Employee> enumerator = developers.GetEnumerator();
             //while(enumerator.MoveNext())

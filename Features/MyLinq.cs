@@ -10,7 +10,7 @@ namespace Features.Linq
     {
         public static int Count<T>(this IEnumerable<T> sequence)  //Generic
         {
-            int count = 0;
+            var count = 0;
             foreach (var item in sequence)
             {
                 count += 1;
