@@ -19,7 +19,7 @@ namespace Queries
             var query = Enumerable.Empty<Movie>();
             try
             {
-                query = movies.Filter(m => m.Year > 2000).ToList();
+                query = movies.Filter(m => m.Year > 2000);
             }
             catch(Exception ex)
             {
