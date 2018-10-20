@@ -16,8 +16,8 @@ namespace Queries
                 new Movie { Title = "Star Wars V", Rating = 8.9f, Year = 1980 },
             };
 
-            //Using Yield for deferred execution
-            var query = movies.Filter(m => m.Year > 2000);
+            var query = movies.Filter(m => m.Year > 2000).ToList();
+            Console.WriteLine(query.Count());
             foreach (var movie in query)
             {
                 Console.WriteLine(movie.Title);
