@@ -16,7 +16,16 @@ namespace Queries
                 new Movie { Title = "Star Wars V", Rating = 8.9f, Year = 1980 },
             };
 
-            var query = movies.Filter(m => m.Year > 2000).ToList();
+            var query = Enumerable.Empty<Movie>();
+            try
+            {
+                query = movies.Filter(m => m.Year > 2000).ToList();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             Console.WriteLine(query.Count());
             foreach (var movie in query)
             {
