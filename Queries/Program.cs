@@ -15,7 +15,8 @@ namespace Queries
                 new Movie { Title = "Casablanca", Rating = 8.5f, Year = 1942 },
                 new Movie { Title = "Star Wars V", Rating = 8.9f, Year = 1980 },
             };
-            
+
+            //Using Yield for deferred execution
             var query = movies.Filter(m => m.Year > 2000);
             foreach (var movie in query)
             {
